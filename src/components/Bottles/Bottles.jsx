@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Bottle from "../Bottle/Bottle";
 import "./Bottles.css"
+import { addToLS } from "../../utilities/localStorage";
 
 const Bottles = () => {
   const [bottles, setBottles] = useState([]);
@@ -17,6 +18,7 @@ const Bottles = () => {
     console.log("added shopping cart in the state");
     const newCart = [...cart, bottle]
     setCart(newCart);
+    addToLS(bottle.id)
   }
 
   return (
